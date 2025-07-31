@@ -38,10 +38,10 @@ df_restaurantes_analise, df_bar_analise = carregar_dados_analise()
 # --- INTERFACE DO STREAMLIT ---
 
 with st.sidebar:
-    st.text('**Integrantes da equipe:**')
-    st.text('**Frontend**: Alisson Nobre Nogueira')
-    st.text('**Cientista de Dados**: Carlos Estellita Neto')
-    st.text('**Cientista de Dados**: Eulidio Regadas de Souza')
+    st.text('Integrantes da equipe:')
+    st.text('Frontend: Alisson Nobre Nogueira')
+    st.text('Cientista de Dados: Carlos Estellita Neto')
+    st.text('Cientista de Dados: Eulidio Regadas de Souza')
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
