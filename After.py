@@ -14,7 +14,7 @@ def carregar_dados_processados():
     Esta função é extremamente rápida.
     """
     try:
-        df = pd.read_csv('projeto/estabelecimentos_geocoded.csv', sep=';')
+        df = pd.read_csv('estabelecimentos_geocoded.csv', sep=';')
         return df
     except FileNotFoundError:
         st.error("Arquivo de dados 'estabelecimentos_geocoded.csv' não encontrado! Por favor, execute o script 'preprocessador.py' primeiro.")
@@ -24,8 +24,8 @@ def carregar_dados_processados():
 def carregar_dados_analise():
     """ Carrega os arquivos originais para as análises nos gráficos. """
     try:
-        df_restaurantes = pd.read_csv("projeto/restaurante.csv", sep=";")
-        df_bares = pd.read_csv("projeto/bar.csv", sep=";")
+        df_restaurantes = pd.read_csv("restaurante.csv", sep=";")
+        df_bares = pd.read_csv("bar.csv", sep=";")
         return df_restaurantes, df_bares
     except FileNotFoundError:
         st.error("Arquivos originais ('restaurante.csv', 'bar.csv') não encontrados na pasta.")
@@ -44,7 +44,7 @@ with st.sidebar:
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("projeto/logo.png", width=300)
+    st.image("logo.png", width=300)
 
 tab1, tab2, tab3, tab4 = st.tabs(["Apresentação", "Análise dos restaurantes", "Análise dos bares", "Geolocalização"])
 
