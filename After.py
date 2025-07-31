@@ -90,7 +90,7 @@ with tab2:
         st.write("####")
 
         # SEGUNDO GRÁFICO RESTAURANTES
-        st.markdown("$\;\;\;$ Este gráfico exibe os 50 locais com as melhores pontuações, variando de 4,0 a quase 5,0. A maioria pertence às faixas de preço $ e $$, mas há também estabelecimentos mais caros ($$$ e $$$$) com alta avaliação.")
+        st.markdown("$\;\;\;$ O gráfico abaixo exibe os 50 locais com as melhores pontuações, variando de 4,0 a quase 5,0. A maioria pertence às faixas de preço $ e $$, mas há também estabelecimentos mais caros ($$$ e $$$$) com alta avaliação.")
         faixas_de_preco = ['$', '$$', '$$$', '$$$$']
         df_filtrado_por_preco = df_limpo[df_limpo['TIPO'].isin(faixas_de_preco)].copy()
         df_para_plotar = df_filtrado_por_preco.sort_values(by='PONTUACAO', ascending=False).head(50)
@@ -109,7 +109,7 @@ with tab2:
         st.write("####")
 
         # TERCEIRO GRÁFICO RESTAURANTES
-        st.markdown("$\;\;\;$ Este gráfico apresenta os *50 restaurantes mais bem avaliados* por pontuação. As notas variam entre *4,5 e 5,0, com forte presença de restaurantes do tipo **genérico**, *comida brasileira* e *caseira*.")
+        st.markdown("$\;\;\;$ O gráfico abaixo apresenta os *50 restaurantes mais bem avaliados* por pontuação. As notas variam entre *4,5 e 5,0, com forte presença de restaurantes do tipo **genérico**, *comida brasileira* e *caseira*.")
         df_ordenado = df_limpo.sort_values(by='PONTUACAO', ascending=False)
         top_50_restaurantes = df_ordenado.head(50)
         top_50_restaurantes['TIPO'] = top_50_restaurantes['TIPO'].apply(lambda s: str(s).replace('$', r'\$'))
@@ -131,7 +131,7 @@ with tab3:
         df_limpo2 = df_bar_analise.dropna(subset=['NOME', 'PONTUACAO', 'TIPO']).copy()
 
         # PRIMEIRO GRÁFICO BARES
-        st.markdown("$\;\;\;$ Este gráfico mostra a *quantidade de bares por tipo*. A maioria é classificada simplesmente como *Bar*, seguida por estabelecimentos de faixa de preço $$ e $.")
+        st.markdown("$\;\;\;$ O gráfico abaixo mostra a *quantidade de bares por tipo*. A maioria é classificada simplesmente como *Bar*, seguida por estabelecimentos de faixa de preço $$ e $.")
         contagem2 = df_limpo2['TIPO'].value_counts()
         rotulos_escapados2 = [str(s).replace('$', r'\$') for s in contagem2.index]
         
@@ -152,7 +152,7 @@ with tab3:
         st.write("####")
 
         # SEGUNDO GRÁFICO BARES
-        st.markdown("$\;\;\;$ Este gráfico mostra os *50 bares mais bem avaliados*. A maioria está nas faixas de preço $*$ e $**$, demonstrando boa qualidade independente do custo.")
+        st.markdown("$\;\;\;$ O gráfico abaixo mostra os *50 bares mais bem avaliados*. A maioria está nas faixas de preço $*$ e $**$, demonstrando boa qualidade independente do custo.")
         faixas_de_preco_bar = ['$', '$$', '$$$', '$$$$']
         df_filtrado_por_preco2 = df_limpo2[df_limpo2['TIPO'].isin(faixas_de_preco_bar)].copy()
         df_para_plotar2 = df_filtrado_por_preco2.sort_values(by='PONTUACAO', ascending=False).head(50)
@@ -170,7 +170,7 @@ with tab3:
         st.pyplot(fig5)
 
         # SEGUNDO GRÁFICO BARES
-        st.markdown("$\;\;\;$ Este gráfico apresenta os 50 bares mais bem avaliados, com pontuações variando de 4,5 a 5,0. A maioria dos locais é classificada como Bar, mas também há presença de bares com música ao vivo, bares e grills, restaurantes, churrascarias e até bares de cerveja.")
+        st.markdown("$\;\;\;$ O gráfico abaixo apresenta os 50 bares mais bem avaliados, com pontuações variando de 4,5 a 5,0. A maioria dos locais é classificada como Bar, mas também há presença de bares com música ao vivo, bares e grills, restaurantes, churrascarias e até bares de cerveja.")
         df_ordenado2 = df_limpo2.sort_values(by='PONTUACAO', ascending=False)
         df_ordenado2['TIPO'] = df_ordenado2['TIPO'].apply(lambda s: str(s).replace('$', r'\$'))
         top_50_bares = df_ordenado2.head(50)
