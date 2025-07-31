@@ -14,7 +14,7 @@ def carregar_dados_processados():
     Esta função é extremamente rápida.
     """
     try:
-        df = pd.read_csv('after/DadosProcessados/estabelecimentos_geocoded.csv', sep=';')
+        df = pd.read_csv('estabelecimentos_geocoded.csv', sep=';')
         return df
     except FileNotFoundError:
         st.error("Arquivo de dados 'estabelecimentos_geocoded.csv' não encontrado! Por favor, execute o script 'preprocessador.py' primeiro.")
@@ -24,11 +24,11 @@ def carregar_dados_processados():
 def carregar_dados_analise():
     """ Carrega os arquivos originais para as análises nos gráficos. """
     try:
-        df_restaurantes = pd.read_csv("after/restaurante.csv", sep=";")
-        df_bares = pd.read_csv("after/bar.csv", sep=";")
+        df_restaurantes = pd.read_csv("restaurante.csv", sep=";")
+        df_bares = pd.read_csv("/bar.csv", sep=";")
         return df_restaurantes, df_bares
     except FileNotFoundError:
-        st.error("Arquivos originais ('restaurante.csv', 'bar.csv') não encontrados na pasta 'Mapas'.")
+        st.error("Arquivos originais ('restaurante.csv', 'bar.csv') não encontrados na pasta.")
         return pd.DataFrame(), pd.DataFrame()
 
 
